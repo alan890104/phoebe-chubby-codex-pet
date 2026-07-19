@@ -1,0 +1,4 @@
+afb60204e02aa23b36ba909023366d24640010c10f7da8fc46e9f49f011bfd89  pet/pet.json
+cc5f91ee8e74e01573bd01dcf8b5e2c32a6edc0206a4ac5b51340486b0b8be3d  pet/pet.zh-TW.json
+abecc5f7add1a73791e3d6d97068b83241abc2e475bbfccc0b54571c9f8b54be  pet/pet.zh-CN.json
+5ec5178ee87343e36d5986652f17adccd18772d51164d13c3f31b6b7b8b19904  pet/spritesheet.webp

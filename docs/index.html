@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phoebe Chubby for Codex</title>
+  <meta name="description" content="Install the animated Phoebe Chubby pet in Codex with one click.">
+  <meta name="theme-color" content="#11142f">
+  <link rel="canonical" href="https://alan890104.github.io/phoebe-chubby-codex-pet/">
+  <link rel="alternate" hreflang="en" href="https://alan890104.github.io/phoebe-chubby-codex-pet/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://alan890104.github.io/phoebe-chubby-codex-pet/zh-TW/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://alan890104.github.io/phoebe-chubby-codex-pet/zh-CN/">
+  <meta property="og:title" content="Phoebe Chubby for Codex">
+  <meta property="og:description" content="Phoebe Chubby runs, waits, reviews, and celebrates in Codex.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alan890104.github.io/phoebe-chubby-codex-pet/">
+  <meta property="og:image" content="https://alan890104.github.io/phoebe-chubby-codex-pet/assets/actions/waving.gif">
+  <script>
+    (() => {
+      const preferenceKey = "phoebe-chubby-locale";
+      const url = new URL(window.location.href);
+      const explicitLocale = url.searchParams.get("lang");
+      const savePreference = (locale) => {
+        try { window.localStorage.setItem(preferenceKey, locale); } catch {}
+      };
+
+      if (explicitLocale === "en") {
+        savePreference("en");
+        url.searchParams.delete("lang");
+        window.history.replaceState(null, "", url);
+        return;
+      }
+
+      let preferredLocale = "";
+      try { preferredLocale = window.localStorage.getItem(preferenceKey) || ""; } catch {}
+      const browserLocale = navigator.languages?.[0] || navigator.language || "en";
+      const locale = preferredLocale || browserLocale;
+      const destination = /^(zh-Hant|zh-(TW|HK|MO))/i.test(locale)
+        ? "zh-TW/"
+        : /^zh/i.test(locale)
+          ? "zh-CN/"
+          : "";
+
+      if (destination) window.location.replace(new URL(destination, url).href);
+    })();
+  </script>
+  <link rel="icon" href="assets/actions/idle.gif">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body
+  data-pet-name="Phoebe Chubby"
+  data-pet-description="Phoebe Chubby runs, waits, reviews, and celebrates alongside your Codex work."
+  data-sprite-url="https://raw.githubusercontent.com/alan890104/phoebe-chubby-codex-pet/main/pet/spritesheet.webp"
+  data-install-label="Install Phoebe Chubby"
+  data-opening-label="Opening Codex…"
+  data-copied-label="Copied"
+>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Main navigation">
+      <a class="brand" href="./" aria-label="Phoebe Chubby home">
+        <img src="assets/actions/idle.gif" alt="" aria-hidden="true">
+        <span>Phoebe Chubby</span>
+      </a>
+      <div class="nav-links">
+        <a href="#animations">Animations</a>
+        <a href="#about">About</a>
+        <details class="language-picker">
+          <summary>English</summary>
+          <div class="language-menu">
+            <a href="./?lang=en" lang="en" data-locale="en" aria-current="page">English</a>
+            <a href="zh-TW/" lang="zh-Hant" data-locale="zh-TW">繁體中文</a>
+            <a href="zh-CN/" lang="zh-Hans" data-locale="zh-CN">简体中文</a>
+          </div>
+        </details>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-stage">
+        <img class="hero-frame" src="assets/ornaments/hero-frame.webp" alt="" aria-hidden="true">
+        <div class="hero-content">
+          <div class="hero-copy" data-reveal>
+            <p class="eyebrow">Phoebe Chubby for Codex</p>
+            <h1 id="hero-title">Add Phoebe Chubby to Codex.</h1>
+            <p class="hero-lede">She runs, waits, reviews, celebrates, and occasionally gets mad as your work changes.</p>
+            <div class="hero-actions">
+              <a class="install-button" href="#" data-install>
+                <span>
+                  <strong data-install-label>Install Phoebe Chubby</strong>
+                  <small>Open in Codex</small>
+                </span>
+              </a>
+            </div>
+            <p class="hero-proof">Click once, then confirm in Codex.</p>
+          </div>
+          <div class="hero-pet-wrap" data-reveal>
+            <img class="hero-pet" src="assets/actions/waving.gif" alt="Phoebe Chubby waving hello">
+            <span class="hero-sticker one">Runs. Jumps. Judges.</span>
+            <span class="hero-sticker two">Gets mad too</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wave-runner" aria-hidden="true">
+      <img src="assets/actions/running-right.gif" alt="">
+    </div>
+
+    <section class="section" id="animations" aria-labelledby="animations-title">
+      <div class="section-inner">
+        <header class="section-heading" data-reveal>
+          <h2 id="animations-title">What does she do in Codex?</h2>
+          <p>Each Codex state plays a different animation.</p>
+        </header>
+
+        <div class="motion-reef">
+          <article class="motion-card" data-reveal>
+            <img src="assets/actions/idle.gif" alt="Phoebe Chubby sitting quietly">
+            <div class="motion-label"><strong>Idle</strong><span>Nothing running</span></div>
+          </article>
+          <article class="motion-card" data-reveal>
+            <img src="assets/actions/running-right.gif" alt="Phoebe Chubby running right">
+            <div class="motion-label"><strong>Running right</strong><span>Moving right</span></div>
+          </article>
+          <article class="motion-card" data-reveal>
+            <img src="assets/actions/running-left.gif" alt="Phoebe Chubby running left">
+            <div class="motion-label"><strong>Running left</strong><span>Moving left</span></div>
+          </article>
+          <article class="motion-card" data-reveal>
+            <img src="assets/actions/waving.gif" alt="Phoebe Chubby waving">
+            <div class="motion-label"><strong>Waving</strong><span>Codex wakes up</span></div>
+          </article>
+          <article class="motion-card" data-reveal>
+            <img src="assets/actions/jumping.gif" alt="Phoebe Chubby jumping happily">
+            <div class="motion-label"><strong>Jumping</strong><span>Work completed</span></div>
+          </article>
+          <article class="motion-card" data-reveal>
+            <img src="assets/actions/failed.gif" alt="Phoebe Chubby looking furious">
+            <div class="motion-label"><strong>Angry</strong><span>Work failed</span></div>
+          </article>
+          <article class="motion-card" data-reveal>
+            <img src="assets/actions/waiting.gif" alt="Phoebe Chubby waiting patiently">
+            <div class="motion-label"><strong>Waiting</strong><span>Needs your input</span></div>
+          </article>
+          <article class="motion-card" data-reveal>
+            <img src="assets/actions/running.gif" alt="Phoebe Chubby working attentively">
+            <div class="motion-label"><strong>Working</strong><span>Task in progress</span></div>
+          </article>
+          <article class="motion-card" data-reveal>
+            <img src="assets/actions/review.gif" alt="Phoebe Chubby ready for review">
+            <div class="motion-label"><strong>Review</strong><span>Ready to check</span></div>
+          </article>
+          <article class="motion-card" data-reveal>
+            <img src="assets/actions/look-around.gif" alt="Phoebe Chubby looking in every direction">
+            <div class="motion-label"><strong>Looking around</strong><span>Follows interaction</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-note" id="about" aria-labelledby="about-title">
+      <div class="research-shell" data-reveal>
+        <img class="research-pet" src="assets/actions/idle.gif" alt="Phoebe Chubby sitting quietly">
+        <p class="eyebrow">About this project</p>
+        <h2 id="about-title">A fan-made meme pet.</h2>
+        <p>This is an unofficial, non-commercial fan project. The character art was generated with GPT Image 2 and assembled into Codex pet animations. We made it because we like Phoebe Chubby and thought a tiny animated version on the desktop would be funny.</p>
+        <div class="research-links">
+          <a href="https://github.com/alan890104/phoebe-chubby-codex-pet">View the source</a>
+          <a href="https://github.com/alan890104/phoebe-chubby-codex-pet/blob/main/NOTICE.md">Read the notice</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img class="footer-pet" src="assets/actions/review.gif" alt="" aria-hidden="true">
+    <p>Phoebe Chubby for Codex · MIT licensed · <span data-year></span></p>
+    <p>Made by Phoebe Chubby fans.</p>
+  </footer>
+
+  <dialog class="install-dialog" data-install-dialog>
+    <div class="dialog-shell">
+      <img class="dialog-pet" src="assets/actions/waiting.gif" alt="Phoebe Chubby waiting">
+      <h2>Did Codex stay closed?</h2>
+      <p>Your browser may have blocked the app link. Use the command for your computer; it also updates an existing installation without creating another pet.</p>
+      <div class="command-shell">
+        <code id="command-unix">curl -fsSL https://raw.githubusercontent.com/alan890104/phoebe-chubby-codex-pet/main/scripts/install.sh | bash</code>
+        <button class="copy-button" type="button" data-copy="command-unix">Copy for macOS or Linux</button>
+      </div>
+      <div class="command-shell">
+        <code id="command-windows">irm https://raw.githubusercontent.com/alan890104/phoebe-chubby-codex-pet/main/scripts/install.ps1 | iex</code>
+        <button class="copy-button" type="button" data-copy="command-windows">Copy for Windows</button>
+      </div>
+      <button class="dialog-close" type="button" data-dialog-close>Close</button>
+    </div>
+  </dialog>
+
+  <script src="assets/site.js" defer></script>
+</body>
+</html>

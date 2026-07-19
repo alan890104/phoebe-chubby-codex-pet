@@ -1,0 +1,23 @@
+name: Attribution or origin clue
+description: Help improve the community provenance record
+title: "[Attribution] "
+labels:
+  - attribution
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping with internet archaeology. Reliable primary sources are especially useful.
+  - type: input
+    id: source
+    attributes:
+      label: Primary source URL
+      placeholder: Earliest post, portfolio, or creator statement
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Why this source matters
+      description: Please explain what it establishes and which image or style it concerns.
+    validations:
+      required: true
